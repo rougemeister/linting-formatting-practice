@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { UserListComponent } from './user-list/user-list.component';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: true,
   imports: [UserListComponent], //Fixed to use single quotes
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'linting-formatting-practice';
