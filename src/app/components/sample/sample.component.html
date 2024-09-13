@@ -1,0 +1,10 @@
+<div class="example-component">
+    <h2>{{ title }}</h2>
+    <p>This component demonstrates adherence to linting and formatting rules.</p>
+    <ul>
+      <li *ngFor="let user of users">
+        {{ user.name }} ({{ user.email }}) - {{ user.age }} years old
+      </li>
+    </ul>
+    <button (click)="addUser()">Add Random User</button>
+  </div>
