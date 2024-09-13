@@ -1,4 +1,4 @@
-import { Component, importProvidersFrom, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../../interface/user-interface';
 import { CommonModule } from '@angular/common';
