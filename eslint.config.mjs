@@ -19,6 +19,12 @@ export default [
       // Example rule: Disallow the use of `var` and enforce `let` or `const`
       "no-var": "warn",
 
+      
+      // Disallow the use of console.log
+      "no-console": ["error", { allow: ["warn", "error"] }],
+
+
+
       // Prettier rules
       "prettier/prettier": "error",
     },

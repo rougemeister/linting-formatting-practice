@@ -1,27 +1,109 @@
-# LintingFormattingPractice
+# Linting and Formatting Practice
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+This project is an Angular application demonstrating the integration of ESLint and Prettier for consistent code style and quality. It includes examples of common linting issues and their resolutions.
 
-## Development server
+## Project Structure
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The project consists of the following main components:
 
-## Code scaffolding
+1. `AppComponent`: The root component of the application.
+2. `UserListComponent`: A component for displaying user lists.
+3. `SampleComponent`: An additional sample component.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## ESLint Configuration
 
-## Build
+The project uses a custom ESLint configuration to enforce coding standards. Key rules include:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- TypeScript-specific rules (e.g., no unused variables)
+- Prohibition of `var` keyword
+- Restricted use of `console.log`
+- Integration with Prettier for formatting
 
-## Running unit tests
+## Setup and Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone the repository:
+   ```
+   git clone [your-repository-url]
+   cd linting-formatting-practice
+   ```
 
-## Running end-to-end tests
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Available Scripts
 
-## Further help
+- `npm start`: Run the app in development mode
+- `npm run build`: Build the app for production
+- `npm test`: Run tests
+- `npm run lint`: Check for linting errors
+- `npm run lint:fix`: Automatically fix linting errors where possible
+- `npm run format`: Format all supported files using Prettier
+- `npm run format:check`: Check if all files are formatted correctly
+- `npm run check`: Run both linting and format checking
+- `npm run fix`: Fix linting issues and format files
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Linting and Formatting
+
+### ESLint
+
+ESLint is configured with Angular-specific rules. To run ESLint:
+
+```
+npm run lint
+```
+
+To automatically fix ESLint issues:
+
+```
+npm run lint:fix
+```
+
+### Prettier
+
+Prettier is used for code formatting. To format your code:
+
+```
+npm run format
+```
+
+To check if your code is formatted correctly:
+
+```
+npm run format:check
+```
+
+## Common Linting Issues and Fixes
+
+1. **String Quotes**: Use single quotes for strings.
+   - Before: `title = "linting-formatting-practice";`
+   - After: `title = 'linting-formatting-practice';`
+
+2. **Const vs Let**: Use `const` for variables that are never reassigned.
+   - Before: `let x = 10;`
+   - After: `const x = 10;`
+
+3. **Console Statements**: Avoid using `console.log` for debugging. Use alternatives like `alert` or proper logging mechanisms.
+   - Before: `console.log('App component initialized');`
+   - After: `// Logging removed or replaced with appropriate mechanism`
+
+4. **Equality Operators**: Use strict equality (`===`) instead of loose equality (`==`).
+   - Before: `if(x == 10)`
+   - After: `if(x === 10)`
+
+5. **Semicolons**: Ensure all statements end with semicolons.
+   - Before: `const y = 20`
+   - After: `const y = 20;`
+
+6. **Any Type**: Avoid using `any` type in TypeScript. Specify a more precise type.
+   - Before: `users: any[];`
+   - After: `users: User[];` (assuming you have a `User` interface or type)
+
+## Contributing
+
+Please ensure your code passes all linting and formatting checks before submitting a pull request. Use `npm run check` to verify your changes.
+
+## License
+
+None
