@@ -19,12 +19,12 @@ export class AppComponent {
   ngOnInit() {
     const x = 10; // x was never reassigned so use const instead of let
     if(x == 10) {
-      alert('x is 10'); //don't use console.log for debugging, use alert
+      console.table('x is 10'); //don't use console.log for debugging, use alert
     }
   }
 
   public doSomething():void {
     const y = 20
-   alert(y) //don't use console.log for debugging, use alert
+   console.table(y) //don't use console.log for debugging, use alert
   }
 }

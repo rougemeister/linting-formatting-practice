@@ -22,10 +22,12 @@ export class SampleComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    console.log('ExampleComponent initialized');
+    console.table('ExampleComponent initialized'); //Using console.table for debugging
+    // console.log throws an error
   }
 
   addUser(): void {
+    //using let here will throw an error because newUser is never reassigned
     const newUser: User = {
       name: `User ${this.users.length + 1}`,
       email: `user${this.users.length + 1}@example.com`,
