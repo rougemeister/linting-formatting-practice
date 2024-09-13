@@ -1,19 +1,23 @@
 import { Component } from '@angular/core';
+import { UserListComponent } from './user-list/user-list.component';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  standalone: true,
+  imports: [UserListComponent], //Fixed to use single quotes
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'linting-formatting-practice';
 
   constructor() {
-    console.log("App component initialized");
+    console.log('App component initialized'); //Fixed to use single quotes
   }
 
   ngOnInit() {
-    let x = 10;
+    const x = 10; // x was never reassigned so use const instead of let
     if(x == 10) {
       console.log('x is 10');
     }

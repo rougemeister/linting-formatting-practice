@@ -1,8 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, importProvidersFrom, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { User } from '../../interface/user-interface';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-user-list',
+  standalone: true,
+  imports: [CommonModule],
   template: `
     <ul>
       <li *ngFor="let user of users">{{ user.name }} ({{ user.age }})</li>
@@ -14,11 +19,12 @@ import { UserService } from '../user.service';
   `]
 })
 export class UserListComponent implements OnInit {
-  users: any[];
+  users: User[] = [];
 
   constructor(private userService: UserService) {}
 
   ngOnInit() {
     this.users = this.userService.getUsers();
+    console.log(this.users);
   }
 }
